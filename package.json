@@ -1,0 +1,40 @@
+{
+  "name": "@sensinum/strapi-utils",
+  "version": "1.0.11",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./@types/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "yarn clean && tsc --watch",
+    "build": "yarn clean && tsc",
+    "publish": "npm publish --latest --scope=sensinum"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VirtusLab-Open-Source/strapi-plugins.git"
+  },
+  "files": [
+    "build",
+    "@types"
+  ],
+  "devDependencies": {
+    "@strapi/design-system": "^2.1.2",
+    "@strapi/icons": "^2.1.2",
+    "@strapi/strapi": "^5.33.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "@strapi/sdk-plugin": "^5.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "styled-components": "^6.0.0"
+  }
+}

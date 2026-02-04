@@ -1,0 +1,11 @@
+public/
+coverage/
+.circleci/
+.github/
+.nvmrc
+.eslintrc
+codecov.yml
+*.map
+*.spec.*
+**/tests/**
+node_modules/
