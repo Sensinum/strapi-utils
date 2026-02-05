@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  codecov: codecov/codecov@5
 jobs:
   test:
     docker:
@@ -81,13 +83,21 @@ workflows:
   version: 2
   test-deploy:
     jobs:
+      - test:
+          filters:
+            tags:
+              only: /^v.*/
       - deploy:
+          requires:
+            - test
           filters:
             tags:
               only: /^v\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
       - deployBeta:
+          requires:
+            - test
           filters:
             tags:
               only: /^v.*-beta\.\d+$/
