@@ -1,17 +1,17 @@
-import { StringMap, Primitive, TypeResult } from "./common.js";
-import { PopulateClause, StrapiUser } from "./core.js";
-import { OnlyStrings } from "./utils.js";
+import { StringMap, Primitive, TypeResult } from './common.js';
+import { PopulateClause, StrapiUser } from './core.js';
+import { OnlyStrings } from './utils.js';
 
 type SendStrapiContextFunction = (...args: unknown[]) => void;
 
 type ThrowStrapiContextFunction = (...args: unknown[]) => void;
 
-type StrapiHTTPErrorConstructor<T = StringMap<unknown>> = (message?: string, details?: T) => any
+type StrapiHTTPErrorConstructor<T = StringMap<unknown>> = (message?: string, details?: T) => any;
 
 export type StrapiRequestContext<
   TBody extends {} = StringMap<string | number>,
   TQuery extends {} = StringMap<string | number>,
-  TParams extends {} = StringMap<string | number>
+  TParams extends {} = StringMap<string | number>,
 > = {
   request: StrapiRequest<TBody>;
   query: TQuery;
@@ -37,7 +37,7 @@ export type StrapiRequest<TBody extends {}> = {
 };
 
 export type StrapiRequestContextState = {
-    user?: StrapiUser
+  user?: StrapiUser;
 };
 
 export type StrapiRequestQuery<T, TFields = keyof T> = {
@@ -48,7 +48,7 @@ export type StrapiRequestQuery<T, TFields = keyof T> = {
   sort?: StringMap<any>;
   fields?: StrapiRequestQueryFieldsClause<OnlyStrings<TFields>>;
   pagination?: StrapiPagination;
-}
+};
 
 export type StrapiRequestQueryFieldsClause<TKeys extends string = string> = Array<TKeys> | '*';
 
@@ -63,7 +63,7 @@ export type StrapiPagination = {
 };
 
 export type StrapiResponseMetaPagination = TypeResult<
-  Pick<StrapiPagination, "page" | "pageSize" | "start" | "limit"> & {
+  Pick<StrapiPagination, 'page' | 'pageSize' | 'start' | 'limit'> & {
     pageCount?: number;
     total?: number;
   }
@@ -88,5 +88,6 @@ type StrapiQueryParamsParsedFilterValue<TKeys extends string = string> =
   | Primitive
   | Partial<Record<TKeys, unknown>>;
 
-export type StrapiQueryParamsParsedFilters<TValue, TKeys = keyof TValue> = 
-Partial<Record<OnlyStrings<TKeys>, StrapiQueryParamsParsedFilterValue<OnlyStrings<TKeys>>>>;
+export type StrapiQueryParamsParsedFilters<TValue, TKeys = keyof TValue> = Partial<
+  Record<OnlyStrings<TKeys>, StrapiQueryParamsParsedFilterValue<OnlyStrings<TKeys>>>
+>;
