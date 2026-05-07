@@ -2,7 +2,7 @@
  * VirtusLab Strapi plugins - Translations utils
  */
 
-import { TradOptions } from "../../@types/translations.js";
+import { TradOptions } from '../../@types/translations.js';
 
 export const prefixPluginTranslations = (trad: TradOptions, pluginId: string): TradOptions => {
   if (!pluginId) {
