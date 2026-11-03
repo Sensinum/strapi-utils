@@ -1,5 +1,5 @@
 /**
- * VirtusLab Strapi plugins utils
+ * Sensinum Strapi plugins utils
  */
 
 export * from './common/index.js';

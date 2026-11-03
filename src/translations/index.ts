@@ -1,5 +1,5 @@
 /**
- * VirtusLab Strapi plugins - Translations utils
+ * Sensinum Strapi plugins - Translations utils
  */
 
 import { TradOptions } from '../../@types/translations.js';
