@@ -1,5 +1,5 @@
 /**
- * VirtusLab Strapi plugins - Common utils
+ * Sensinum Strapi plugins - Common utils
  */
 
 import { Core } from '@strapi/strapi';

@@ -1,25 +1,41 @@
 {
   "name": "@sensinum/strapi-utils",
   "version": "1.0.12",
-  "description": "",
+  "description": "Shared utilities for Sensinum Strapi plugins",
+  "license": "MIT",
+  "author": "Sensinum <hello@sensinum.com>",
+  "contributors": [
+    "Mateusz Ziarko <mziarko@virtuslab.com>",
+    "Mateusz Kleszcz <mkleszcz@virtuslab.com>",
+    "Kamil Adamczyk <kadamczyk@virtuslab.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sensinum/strapi-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sensinum/strapi-utils/issues"
+  },
+  "homepage": "https://github.com/Sensinum/strapi-utils#readme",
+  "engines": {
+    "node": ">=22.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
   "main": "./build/index.js",
   "types": "./@types/index.d.ts",
   "type": "module",
-  "scripts": {
-    "clean": "rm -rf ./build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "yarn clean && tsc --watch",
-    "build": "yarn clean && tsc",
-    "publish": "npm publish --latest --scope=sensinum"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VirtusLab-Open-Source/strapi-plugins.git"
-  },
   "files": [
     "build",
     "@types"
   ],
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "test": "tsc --noEmit",
+    "coverage": "yarn test",
+    "develop": "yarn clean && tsc --watch",
+    "build": "yarn clean && tsc"
+  },
+  "packageManager": "yarn@4.13.0",
   "devDependencies": {
     "@strapi/design-system": "^2.1.2",
     "@strapi/icons": "^2.1.2",
