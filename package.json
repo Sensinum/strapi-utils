@@ -1,6 +1,6 @@
 {
   "name": "@sensinum/strapi-utils",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Shared utilities for Sensinum Strapi plugins",
   "license": "MIT",
   "author": "Sensinum <hello@sensinum.com>",
